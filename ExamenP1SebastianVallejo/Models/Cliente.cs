@@ -23,7 +23,6 @@ namespace ExamenP1SebastianVallejo.Models
 
         
 
-
     }
 }
 
