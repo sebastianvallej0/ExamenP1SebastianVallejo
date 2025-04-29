@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ExamenP1SebastianVallejo.Models;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ExamenP1SebastianVallejo.Models
 {
@@ -12,7 +14,7 @@ namespace ExamenP1SebastianVallejo.Models
         public DateTime FechaSalida { get; set; }
 
         public decimal ValorAPagar { get; set; }
-
+        [ForeignKey("Cliente")]
         public int ClienteId { get; set; }
 
         public Cliente? Cliente { get; set; } 
@@ -22,3 +24,6 @@ namespace ExamenP1SebastianVallejo.Models
         
     }
 }
+
+
+
