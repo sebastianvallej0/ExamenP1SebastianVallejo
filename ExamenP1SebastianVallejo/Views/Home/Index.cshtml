@@ -5,17 +5,34 @@
 
 
 <div class="text-center">
-    <h1 class="display-4">Bienvenido</h1>
+    <h1 id="titulo" class="display-4">Bienvenido</h1>
 
     <img src="~/images/meme.jpg" alt="Meme favorito" class="meme-img" />
 
     <br /><br />
 
-    <input type="text" placeholder="Escribe algo..." class="form-control w-50 mx-auto" />
+    <input type="text" id="nombreInput" placeholder="¿Cuál es tu nombre?" class="form-control w-50 mx-auto" />
 
     <br />
 
-    <button class="btn btn-outline-info btn-lg" onclick="alert('dame los modelos primero')">
+    <button class="btn btn-outline-info btn-lg" onclick="mostrarBienvenida()">
         Mostrar Alerta
     </button>
 </div>
+
+@section Scripts {
+    <script>
+        function mostrarBienvenida() {
+            var nombre = document.getElementById('nombreInput').value;
+
+            if (nombre.trim() === "") {
+                alert('Por favor escribe tu nombre.');
+                return;
+            }
+
+            document.getElementById('titulo').innerText = "Bienvenido, " + nombre;
+            alert("¡Hola " + nombre + "! dame los modelos primero 😄");
+        }
+    </script>
+}
+
